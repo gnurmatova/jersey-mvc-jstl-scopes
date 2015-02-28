@@ -16,17 +16,28 @@
 		<mvn.compiler.version>3.0</mvn.compiler.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
 	<dependencies>
-		<!--<dependency> <groupId>com.sun.jersey</groupId> <artifactId>jersey-server</artifactId> 
-			<version>${jersey.version}</version> </dependency> -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.ext</groupId>
+			<artifactId>jersey-mvc-mustache</artifactId>
+			<version>2.16</version>
+		</dependency>
 		<dependency>
 			<groupId>org.glassfish.jersey.containers</groupId>
-			<!-- if your container implements Servlet API older than 3.0, use "jersey-container-servlet-core" -->
 			<artifactId>jersey-container-servlet</artifactId>
 			<version>2.14</version>
 		</dependency>
-		<!-- if you are using Jersey client specific features without the server 
-			side -->
 		<dependency>
 			<groupId>org.glassfish.jersey.core</groupId>
 			<artifactId>jersey-client</artifactId>
@@ -39,8 +50,18 @@
 			<version>2.14</version>
 		</dependency>
 		<dependency>
+			<groupId>org.glassfish.jersey.ext</groupId>
+			<artifactId>jersey-mvc-jsp</artifactId>
+			<version>2.14</version>
+		</dependency>
+		<dependency>
 			<groupId>org.glassfish.jersey.core</groupId>
 			<artifactId>jersey-client</artifactId>
+			<version>2.14</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-multipart</artifactId>
 			<version>2.14</version>
 		</dependency>
 		<dependency>
@@ -89,18 +110,14 @@
 			<version>2.12.5</version>
 		</dependency>
 		<dependency>
-			<groupId>postgresql</groupId>
+			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>9.1-901-1.jdbc4</version>
+			<version>9.3-1100-jdbc41</version>
 		</dependency>
 	</dependencies>
 	<build>
 		<finalName>LuckyPants</finalName>
 		<plugins>
-			<!-- <plugin> <artifactId>maven-war-plugin</artifactId> <version>2.1.1</version> 
-				<configuration> <warSourceDirectory>src/main/java/com</warSourceDirectory> 
-				<webResources> <resource> <directory>WebContent</directory> </resource> </webResources> 
-				</configuration> </plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>

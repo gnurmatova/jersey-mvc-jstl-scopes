@@ -1,6 +1,8 @@
 package model;
 
-public class Song {
+public class Song implements java.io.Serializable {
+
+	private static final long serialVersionUID = -523250328947667723L;
 	public String getTitle() {
 		return title;
 	}
